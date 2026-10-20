@@ -2,6 +2,7 @@
 Encoding.default_external = Encoding::UTF_8
 require 'json'
 require 'cgi'
+require 'digest'
 root = File.expand_path('..', __dir__)
 items = JSON.parse(File.read(File.join(root, 'tmp/portfolio/import.json'), encoding: 'UTF-8'))
 labels = {'pilates'=>'Pilates & wellness','fintech'=>'Fintech & trading','eventy'=>'Eventy','sport'=>'Tenis & sport','taniec'=>'Taniec','nieruchomosci'=>'Nieruchomości','beauty'=>'Beauty','optyka'=>'Optyk'}
@@ -16,16 +17,51 @@ items.sort_by! { |entry| order.index(entry['id']) || order.size }
 labels.select! { |id, label| items.any? { |entry| entry['category'] == id } }
 esc = ->(s){CGI.escapeHTML(s.to_s)}
 buttons = [['all','Wszystkie']] + labels.to_a
+controls = buttons.map { |id,label| %(<input class="portfolio-control" type="radio" name="portfolio-category" id="portfolio-filter-#{id}" value="#{id}"#{id=='all' ? ' checked' : ''}/>) }.join("\n")
+controls << %(<input class="portfolio-control" type="checkbox" id="portfolio-expanded"/>)
 filters = buttons.map do |id,label|
   count = id == 'all' ? items.size : items.count{|e|e['category']==id}
-  %(<button type="button" class="portfolio-filter" data-filter="#{id}" aria-pressed="#{id=='all'}" aria-controls="portfolio-grid">#{esc.call(label)} <span>#{count}</span></button>)
+  %(<label class="portfolio-filter" for="portfolio-filter-#{id}" data-filter="#{id}">#{esc.call(label)} <span>#{count}</span></label>)
 end.join("\n")
+filter_styles = buttons.map do |id,label|
+  selector = "#portfolio-filter-#{id}:checked"
+  rule = "#{selector}~.portfolio-filters [for=portfolio-filter-#{id}]{background:var(--ink);border-color:var(--ink);color:var(--paper)}"
+  if id != 'all'
+    rule << "#{selector}~.portfolio-grid>.portfolio-item:not([data-category=#{id}]){display:none}"
+    rule << "#{selector}~.portfolio-more{display:none}"
+  end
+  rule << "#{selector}~.portfolio-results [data-result=#{id}]{display:inline}"
+  rule
+end.join("\n")
+results = buttons.map do |id,label|
+  count = id == 'all' ? items.size : items.count{|e|e['category']==id}
+  text = id == 'all' ? %(pokazuję <span class="portfolio-count-collapsed">3</span><span class="portfolio-count-expanded">#{count}</span> z #{count} realizacji) : "liczba realizacji: #{count}"
+  %(<span data-result="#{id}">#{esc.call(label)} — #{text}</span>)
+end.join
 cards = items.each_with_index.map do |item,index|
   category = esc.call(item['category']);title = esc.call(item['title']);description = esc.call(item['description']);src=esc.call(item['src']);badge=item['kind']=='video' ? 'WIDEO' : 'GRAFIKA';badge='ZDJĘCIE' if item['id']=='allincamp-grupa'
   if item['kind']=='video'
     seconds=item.fetch('duration'); duration="#{seconds/60}:#{format('%02d',seconds%60)}"
 poster = item['poster']
+embed = item['embed']
 image = poster ? %(<img class="portfolio-poster" src="#{esc.call(poster)}" alt="" loading="lazy" decoding="async" width="#{item.fetch('width', 720)}" height="#{item.fetch('height', 1280)}"/>) : ''
+if embed
+player_url = embed + (embed.include?('?') ? '&' : '?') + 'autoplay=1'
+visual=<<~HTML
+<div class="portfolio-visual portfolio-video#{poster ? ' has-poster' : ''}" data-video-card>
+  <details class="portfolio-player">
+    <summary class="portfolio-play" aria-label="Odtwórz: #{title}">
+      #{image}
+      <span class="portfolio-duration">#{duration}</span>
+      <span class="portfolio-play-circle" aria-hidden="true">▶</span>
+      <span class="portfolio-play-caption">Odtwórz film</span>
+    </summary>
+    <iframe class="portfolio-embed" src="#{esc.call(player_url)}" title="#{title}" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
+  </details>
+</div>
+<a class="portfolio-vimeo-link" href="#{esc.call(player_url)}" target="_blank" rel="noopener noreferrer">Otwórz film w Vimeo ↗</a>
+HTML
+else
 visual=<<~HTML
 <div class="portfolio-visual portfolio-video#{poster ? ' has-poster' : ''}" data-video-card>
   <button type="button" class="portfolio-play" data-video-src="#{src}" aria-label="Odtwórz: #{title}">
@@ -39,19 +75,23 @@ visual=<<~HTML
   <p class="portfolio-video-error" hidden>Nie udało się odtworzyć filmu. <a href="#{src}">Otwórz plik wideo ↗</a></p>
 </div>
 HTML
+end
   else
     visual=%(<a class="portfolio-visual portfolio-image" href="#{src}" data-gallery-image aria-label="Powiększ: #{title}"><img src="#{src}" alt="#{title}" loading="lazy" decoding="async"/><span class="portfolio-enlarge" aria-hidden="true">Powiększ ↗</span></a>)
   end
-  %(<article class="portfolio-item"#{index >= 3 ? " hidden" : ""} data-category="#{category}" data-asset-id="#{esc.call(item['id'])}"><div class="portfolio-item-top"><span>#{esc.call(labels[item['category']])}</span><span>#{badge}</span></div>#{visual}<h3>#{title}</h3><p>#{description}</p></article>)
+  %(<article class="portfolio-item" data-category="#{category}" data-asset-id="#{esc.call(item['id'])}"><div class="portfolio-item-top"><span>#{esc.call(labels[item['category']])}</span><span>#{badge}</span></div>#{visual}<h3>#{title}</h3><p>#{description}</p></article>)
 end.join("\n")
 gallery = <<~HTML
 <section class="portfolio-gallery section-pad" id="realizacje" aria-labelledby="portfolio-title">
 <div class="section-heading reveal"><div><p class="eyebrow">OD POMYSŁU DO PUBLIKACJI</p><h2 id="portfolio-title">Moja praca.<br/><em>W konkretnych kadrach.</em></h2></div><p>To tylko wybrane realizacje z mojego portfolio.<br/>Rolki, kampanie i materiały z wydarzeń.</p></div>
+<style>#{filter_styles}</style>
+#{controls}
 <div class="portfolio-filters" role="group" aria-label="Wybierz temat realizacji">#{filters}</div>
-<p class="portfolio-results" role="status" aria-live="polite">Wszystkie — pokazuję #{[3, items.size].min} z #{items.size} realizacji</p>
+<p class="portfolio-results" role="status" aria-live="polite">#{results}</p>
 <div class="portfolio-grid" id="portfolio-grid">#{cards}</div>
+<label class="portfolio-more" for="portfolio-expanded"><span class="portfolio-count-collapsed">Zobacz więcej (#{items.size - 3}) ↓</span><span class="portfolio-count-expanded">Pokaż mniej ↑</span></label>
 <p class="portfolio-watch-note">Wybierz temat i zajrzyj do środka. Grafiki możesz powiększyć, a filmy odtworzyć z dźwiękiem.</p>
-<noscript><style>.portfolio-item[hidden]{display:block!important}.portfolio-filters,.portfolio-results{display:none}.portfolio-video{display:none}</style><p>Pełny podgląd wideo wymaga JavaScript.</p></noscript>
+
 <dialog class="portfolio-lightbox" aria-label="Podgląd realizacji"><button type="button" class="portfolio-lightbox-close" aria-label="Zamknij podgląd">Zamknij ×</button><img alt=""/><p></p></dialog>
 </section>
 HTML
@@ -72,7 +112,11 @@ html.sub!(/<section class="creative section-pad".*?<\/section>/m,'')
 html.sub!('<a href="#projekty">Wybrane projekty</a>', '<a href="#realizacje">Realizacje</a>')
 html.sub!('Miejsce na historie,', 'Historie,')
 html.sub!('style.css?v=3','style.css?v=4')
-html.sub!('script.js?v=3','script.js?v=4')
+# Asset fingerprints prevent older scripts from being combined with new gallery HTML.
+%w[script.js style.css].each do |asset|
+  version = Digest::SHA256.file(File.join(root, 'dist', asset)).hexdigest[0, 12]
+  html.gsub!(/#{Regexp.escape(asset)}\?v=[a-zA-Z0-9]+/, "#{asset}?v=#{version}")
+end
 File.write(htmlpath,html)
 media_path=File.join(root,'dist/assets/media.json')
 media=JSON.parse(File.read(media_path,encoding:'UTF-8'))

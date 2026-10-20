@@ -11,7 +11,8 @@
     "height": 3840,
     "codec": "hvc1",
     "poster": "assets/content/posters/krotki-format.jpg",
-    "posterTime": 0.49
+    "posterTime": 0.49,
+    "embed": "https://player.vimeo.com/video/1237650814?badge=0&autopause=1"
   },
   {
     "id": "montaz-08",
@@ -25,7 +26,8 @@
     "height": 3840,
     "codec": "hvc1",
     "poster": "assets/content/posters/montaz-08.jpg",
-    "posterTime": 2.85
+    "posterTime": 2.85,
+    "embed": "https://player.vimeo.com/video/1237650744?badge=0&autopause=1"
   },
   {
     "id": "montaz-05",
@@ -39,7 +41,8 @@
     "height": 3840,
     "codec": "hvc1",
     "poster": "assets/content/posters/montaz-05.jpg",
-    "posterTime": 2.85
+    "posterTime": 2.85,
+    "embed": "https://player.vimeo.com/video/1237650576?badge=0&autopause=1"
   },
   {
     "id": "montaz-06",
@@ -54,7 +57,8 @@
     "codec": "hvc1",
     "poster": "assets/content/posters/montaz-06.jpg",
     "posterTime": 3.61,
-    "posterDecodedFrames": 24
+    "posterDecodedFrames": 24,
+    "embed": "https://player.vimeo.com/video/1237650670?badge=0&autopause=1"
   },
   {
     "id": "montaz-04",
@@ -68,7 +72,8 @@
     "height": 3840,
     "codec": "hvc1",
     "poster": "assets/content/posters/montaz-04.jpg",
-    "posterTime": 1.61
+    "posterTime": 1.61,
+    "embed": "https://player.vimeo.com/video/1237650630?badge=0&autopause=1"
   },
   {
     "id": "montaz-01",
@@ -82,7 +87,8 @@
     "height": 3840,
     "codec": "hvc1",
     "poster": "assets/content/posters/montaz-01.jpg",
-    "posterTime": 12.9
+    "posterTime": 12.9,
+    "embed": "https://player.vimeo.com/video/1237650574?badge=0&autopause=1"
   },
   {
     "id": "otwarcie",
@@ -91,6 +97,7 @@
     "description": "Rolka zapowiadająca otwarcie studia Polka Pilates w Gliwicach.",
     "kind": "video",
     "src": "assets/content/portfolio/pilates/otwarcie.mp4",
+    "embed": "https://player.vimeo.com/video/1237650931?badge=0&autopause=1",
     "duration": 20,
     "width": 2160,
     "height": 3840,
@@ -110,7 +117,8 @@
     "height": 3840,
     "codec": "avc1",
     "poster": "assets/content/posters/pila-pila.jpg",
-    "posterTime": 24.94
+    "posterTime": 24.94,
+    "embed": "https://player.vimeo.com/video/1237650900?badge=0&autopause=1"
   },
   {
     "id": "estate-street-sesja",
@@ -119,6 +127,7 @@
     "description": "Materiał wideo z sesji, przygotowany w ramach pracy dla biura nieruchomości.",
     "kind": "video",
     "src": "assets/content/portfolio/nieruchomosci/estate-street-sesja.mp4",
+    "embed": "https://player.vimeo.com/video/1237650952?badge=0&autopause=1",
     "duration": 34,
     "width": 1080,
     "height": 1920,
@@ -179,7 +188,8 @@
     "height": 3840,
     "codec": "hvc1",
     "poster": "assets/content/posters/montaz-07.jpg",
-    "posterTime": 15.87
+    "posterTime": 15.87,
+    "embed": "https://player.vimeo.com/video/1237650717?badge=0&autopause=1"
   },
   {
     "id": "high-heels",
@@ -188,6 +198,7 @@
     "description": "Pionowy materiał promujący zajęcia taneczne.",
     "kind": "video",
     "src": "assets/content/portfolio/taniec/high-heels.mp4",
+    "embed": "https://player.vimeo.com/video/1237650856?badge=0&autopause=1",
     "duration": 46,
     "width": 4320,
     "height": 7680,
@@ -207,7 +218,8 @@
     "height": 1920,
     "codec": "avc1",
     "poster": "assets/content/posters/kpop.jpg",
-    "posterTime": 3.99
+    "posterTime": 3.99,
+    "embed": "https://player.vimeo.com/video/1237650862?badge=0&autopause=1"
   },
   {
     "id": "bezplatne-badanie",
@@ -221,7 +233,8 @@
     "height": 7680,
     "codec": "hvc1",
     "poster": "assets/content/posters/bezplatne-badanie.jpg",
-    "posterTime": 2.45
+    "posterTime": 2.45,
+    "embed": "https://player.vimeo.com/video/1237650856?badge=0&autopause=1"
   },
   {
     "id": "taniec-18-40",
@@ -230,6 +243,7 @@
     "description": "Rolka promocyjna przygotowana dla studia tańca Passa Passa.",
     "kind": "video",
     "src": "assets/content/portfolio/taniec/taniec-18-40.mp4",
+    "embed": "https://player.vimeo.com/video/1237650573?badge=0&autopause=1",
     "duration": 34,
     "width": 4320,
     "height": 7680,
@@ -244,6 +258,7 @@
     "description": "Krótki format wideo z campu — ludzie, atmosfera i wspólne wspomnienia.",
     "kind": "video",
     "src": "assets/content/portfolio/eventy/allincamp-relacja.mp4",
+    "embed": "https://player.vimeo.com/video/1237651002?badge=0&autopause=1",
     "duration": 14,
     "width": 720,
     "height": 1280,
@@ -264,7 +279,8 @@
     "height": 1280,
     "codec": "avc1",
     "poster": "assets/content/posters/platforma-tradingowa.jpg",
-    "posterTime": 13.44
+    "posterTime": 13.44,
+    "embed": "https://player.vimeo.com/video/1237650809?badge=0&autopause=1"
   },
   {
     "id": "prop-trading",
@@ -273,6 +289,7 @@
     "description": "Treść edukacyjna dla społeczności traderów.",
     "kind": "video",
     "src": "assets/content/portfolio/fintech/prop-trading.mp4",
+    "embed": "https://player.vimeo.com/video/1237651017?badge=0&autopause=1",
     "duration": 65,
     "width": 720,
     "height": 1280,
@@ -287,6 +304,7 @@
     "description": "Rolka promocyjna zachęcająca do udziału i interakcji.",
     "kind": "video",
     "src": "assets/content/portfolio/fintech/konkurs-trading.mp4",
+    "embed": "https://player.vimeo.com/video/1237650925?badge=0&autopause=1",
     "duration": 40,
     "width": 720,
     "height": 1280,
@@ -306,7 +324,8 @@
     "height": 3840,
     "codec": "hvc1",
     "poster": "assets/content/posters/montaz-02.jpg",
-    "posterTime": 4.68
+    "posterTime": 4.68,
+    "embed": "https://player.vimeo.com/video/1237650578?badge=0&autopause=1"
   },
   {
     "id": "montaz-03",
@@ -320,7 +339,8 @@
     "height": 3840,
     "codec": "hvc1",
     "poster": "assets/content/posters/montaz-03.jpg",
-    "posterTime": 14.35
+    "posterTime": 14.35,
+    "embed": "https://player.vimeo.com/video/1237650654?badge=0&autopause=1"
   },
   {
     "id": "beauty-paznokcie",
@@ -334,7 +354,8 @@
     "height": 640,
     "codec": "avc1",
     "poster": "assets/content/posters/beauty-paznokcie.jpg",
-    "posterTime": 6.9
+    "posterTime": 6.9,
+    "embed": "https://player.vimeo.com/video/1237650782?badge=0&autopause=1"
   },
   {
     "id": "allincamp-grupa",

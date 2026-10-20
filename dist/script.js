@@ -1,3 +1,4 @@
+(()=>{
 document.documentElement.classList.add('js');
 const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;entry.target.classList.add('visible');observer.unobserve(entry.target);});},{threshold:.09});
@@ -69,44 +70,34 @@ loadPortfolioMedia();
 // Topic filters and click-to-load portfolio films.
 const portfolioGallery=document.querySelector('.portfolio-gallery');
 if(portfolioGallery){
- const cards=[...portfolioGallery.querySelectorAll('.portfolio-item')];
- const filters=[...portfolioGallery.querySelectorAll('[data-filter]')];
- const result=portfolioGallery.querySelector('.portfolio-results');
-const more=document.createElement('button');
-more.type='button';more.className='portfolio-more';more.setAttribute('aria-controls','portfolio-grid');
-portfolioGallery.querySelector('.portfolio-grid').after(more);
-let activeFilter='all';let expanded=false;
-function renderPortfolio(){
- const matching=cards.filter(card=>activeFilter==='all'||card.dataset.category===activeFilter);
- const visible=activeFilter==='all'&&!expanded?matching.slice(0,3):matching;
- cards.forEach(card=>{card.hidden=!visible.includes(card);if(card.hidden)card.querySelector('video')?.pause()});
- const selected=filters.find(filter=>filter.dataset.filter===activeFilter);
- result.textContent=selected.firstChild.textContent.trim()+' — '+(visible.length<matching.length?'pokazuję '+visible.length+' z '+matching.length+' realizacji':'liczba realizacji: '+matching.length);
- more.hidden=activeFilter!=='all'||matching.length<=3;
- more.setAttribute('aria-expanded',String(expanded));
- more.textContent=expanded?'Pokaż mniej ↑':'Zobacz więcej ('+(matching.length-3)+') ↓';
-}
-filters.forEach(button=>button.addEventListener('click',()=>{
- activeFilter=button.dataset.filter;expanded=false;
- filters.forEach(filter=>filter.setAttribute('aria-pressed',String(filter===button)));
- renderPortfolio();
-}));
-more.addEventListener('click',()=>{
- expanded=!expanded;renderPortfolio();
- if(!expanded)portfolioGallery.scrollIntoView({behavior:motionQuery.matches?'instant':'smooth',block:'start'});
-});
-renderPortfolio();
+ function stopPortfolioEmbeds(except=null){
+  portfolioGallery.querySelectorAll('.portfolio-player[open]').forEach(player=>{if(player!==except)player.open=false;});
+ }
+ portfolioGallery.querySelectorAll('.portfolio-control').forEach(control=>control.addEventListener('change',()=>stopPortfolioEmbeds()));
  portfolioGallery.querySelectorAll('[data-video-src]').forEach(button=>{
   button.addEventListener('click',()=>{
    const container=button.closest('[data-video-card]');
    const video=container.querySelector('video');
    const error=container.querySelector('.portfolio-video-error');
    portfolioGallery.querySelectorAll('video').forEach(other=>{if(other!==video)other.pause()});
+   stopPortfolioEmbeds();
    button.hidden=true;video.hidden=false;error.hidden=true;
    if(!video.getAttribute('src')){video.src=button.dataset.videoSrc;video.load();}
    video.addEventListener('error',()=>{error.hidden=false},{once:true});
    video.play().catch(()=>{if(video.error)error.hidden=false;});
    video.focus();
+  });
+ });
+ portfolioGallery.querySelectorAll('.portfolio-player').forEach(player=>{
+  player.addEventListener('toggle',()=>{
+   if(player.open){
+    stopPortfolioEmbeds(player);
+    portfolioGallery.querySelectorAll('video').forEach(video=>video.pause());
+   }else{
+    const frame=player.querySelector('iframe');
+    // Reload a closed player to stop its audio, while native details still works without JS.
+    if(frame)frame.src=frame.getAttribute('src');
+   }
   });
  });
  portfolioGallery.querySelectorAll('video').forEach(video=>video.addEventListener('play',()=>{
@@ -135,3 +126,5 @@ document.querySelectorAll('.brand-mark img').forEach(logo=>{
  logo.addEventListener('error',update);
  update();
 });
+
+})();

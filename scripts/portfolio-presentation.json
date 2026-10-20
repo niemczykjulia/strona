@@ -31,47 +31,57 @@
   "videos": {
     "pila-pila": {
       "poster": "assets/content/posters/pila-pila.jpg",
-      "posterTime": 24.94
+      "posterTime": 24.94,
+      "embed": "https://player.vimeo.com/video/1237650900?badge=0&autopause=1"
     },
     "platforma-tradingowa": {
       "poster": "assets/content/posters/platforma-tradingowa.jpg",
-      "posterTime": 13.44
+      "posterTime": 13.44,
+      "embed": "https://player.vimeo.com/video/1237650809?badge=0&autopause=1"
     },
     "prop-trading": {
       "poster": "assets/content/posters/prop-trading.jpg",
-      "posterTime": 22.75
+      "posterTime": 22.75,
+      "embed": "https://player.vimeo.com/video/1237651017?badge=0&autopause=1"
     },
     "konkurs-trading": {
       "poster": "assets/content/posters/konkurs-trading.jpg",
-      "posterTime": 2.8
+      "posterTime": 2.8,
+      "embed": "https://player.vimeo.com/video/1237650925?badge=0&autopause=1"
     },
     "allincamp-relacja": {
       "poster": "assets/content/posters/allincamp-relacja-julia.jpg",
       "posterTime": 5.5,
-      "posterExactTime": true
+      "posterExactTime": true,
+      "embed": "https://player.vimeo.com/video/1237651002?badge=0&autopause=1"
     },
     "high-heels": {
       "poster": "assets/content/posters/high-heels.jpg",
-      "posterTime": 3.22
+      "posterTime": 3.22,
+      "embed": "https://player.vimeo.com/video/1237650856?badge=0&autopause=1"
     },
     "taniec-18-40": {
       "poster": "assets/content/posters/taniec-18-40.jpg",
-      "posterTime": 17.68
+      "posterTime": 17.68,
+      "embed": "https://player.vimeo.com/video/1237650573?badge=0&autopause=1"
     },
     "kpop": {
       "poster": "assets/content/posters/kpop.jpg",
-      "posterTime": 3.99
+      "posterTime": 3.99,
+      "embed": "https://player.vimeo.com/video/1237650862?badge=0&autopause=1"
     },
     "estate-street-sesja": {
       "poster": "assets/content/posters/estate-street-sesja-grupa.jpg",
       "posterTime": 8.4,
-      "posterExactTime": true
+      "posterExactTime": true,
+      "embed": "https://player.vimeo.com/video/1237650952?badge=0&autopause=1"
     },
     "beauty-paznokcie": {
       "poster": "assets/content/posters/beauty-paznokcie.jpg",
       "posterTime": 6.9,
       "category": "pilates",
-      "src": "assets/content/portfolio/pilates/beauty-paznokcie.mp4"
+      "src": "assets/content/portfolio/pilates/beauty-paznokcie.mp4",
+      "embed": "https://player.vimeo.com/video/1237650782?badge=0&autopause=1"
     },
     "bezplatne-badanie": {
       "poster": "assets/content/posters/bezplatne-badanie.jpg",
@@ -79,31 +89,36 @@
       "title": "Passa Passa · zajęcia dla kobiet 30+",
       "description": "Rolka promocyjna zajęć tanecznych dla kobiet w Passa Passa.",
       "category": "taniec",
-      "src": "assets/content/portfolio/taniec/ladies-30-plus.mp4"
+      "src": "assets/content/portfolio/taniec/ladies-30-plus.mp4",
+      "embed": "https://player.vimeo.com/video/1237650856?badge=0&autopause=1"
     },
     "otwarcie": {
       "poster": "assets/content/posters/otwarcie.jpg",
       "posterTime": 13.8,
       "title": "Polka Pilates · otwarcie studia",
-      "description": "Rolka zapowiadająca otwarcie studia Polka Pilates w Gliwicach."
+      "description": "Rolka zapowiadająca otwarcie studia Polka Pilates w Gliwicach.",
+      "embed": "https://player.vimeo.com/video/1237650931?badge=0&autopause=1"
     },
     "krotki-format": {
       "poster": "assets/content/posters/krotki-format.jpg",
       "posterTime": 0.49,
       "title": "Polka Pilates · chwila dla siebie",
-      "description": "Krótki format wideo ze studia — ruch, detale i zaproszenie na zajęcia."
+      "description": "Krótki format wideo ze studia — ruch, detale i zaproszenie na zajęcia.",
+      "embed": "https://player.vimeo.com/video/1237650814?badge=0&autopause=1"
     },
     "montaz-01": {
       "poster": "assets/content/posters/montaz-01.jpg",
       "posterTime": 12.9,
       "title": "Polka Pilates · zacznij od ruchu",
-      "description": "Pionowa rolka promująca zajęcia i otwarcie studia."
+      "description": "Pionowa rolka promująca zajęcia i otwarcie studia.",
+      "embed": "https://player.vimeo.com/video/1237650574?badge=0&autopause=1"
     },
     "montaz-02": {
       "poster": "assets/content/posters/montaz-02.jpg",
       "posterTime": 4.68,
       "title": "Self care · rytuał pielęgnacyjny",
-      "description": "Materiał wideo pokazujący rytuał pielęgnacyjny i detale zabiegu."
+      "description": "Materiał wideo pokazujący rytuał pielęgnacyjny i detale zabiegu.",
+      "embed": "https://player.vimeo.com/video/1237650578?badge=0&autopause=1"
     },
     "montaz-03": {
       "poster": "assets/content/posters/montaz-03.jpg",
@@ -111,38 +126,44 @@
       "title": "Oakley · wzrok w 3D",
       "description": "Rolka z salonu Oakley — okulary i komunikacja badania wzroku.",
       "category": "optyka",
-      "src": "assets/content/portfolio/optyka/montaz-03.mp4"
+      "src": "assets/content/portfolio/optyka/montaz-03.mp4",
+      "embed": "https://player.vimeo.com/video/1237650654?badge=0&autopause=1"
     },
     "montaz-04": {
       "poster": "assets/content/posters/montaz-04.jpg",
       "posterTime": 1.61,
       "title": "Polka Pilates × Medisti · otwarcie",
-      "description": "Relacja z otwarcia: wnętrza studia, strefa beauty i detale wydarzenia."
+      "description": "Relacja z otwarcia: wnętrza studia, strefa beauty i detale wydarzenia.",
+      "embed": "https://player.vimeo.com/video/1237650630?badge=0&autopause=1"
     },
     "montaz-05": {
       "poster": "assets/content/posters/montaz-05.jpg",
       "posterTime": 2.85,
       "title": "Polka Pilates · trening na reformerze",
-      "description": "Rolka promująca trening i zapisy do studia Polka Pilates."
+      "description": "Rolka promująca trening i zapisy do studia Polka Pilates.",
+      "embed": "https://player.vimeo.com/video/1237650576?badge=0&autopause=1"
     },
     "montaz-06": {
       "poster": "assets/content/posters/montaz-06.jpg",
       "posterTime": 3.61,
       "title": "Polka Pilates · ruch w swoim rytmie",
       "description": "Materiał ze studia łączący trening, atmosferę i promocję zajęć.",
-      "posterDecodedFrames": 24
+      "posterDecodedFrames": 24,
+      "embed": "https://player.vimeo.com/video/1237650670?badge=0&autopause=1"
     },
     "montaz-07": {
       "poster": "assets/content/posters/montaz-07.jpg",
       "posterTime": 15.87,
       "title": "Beauty · kulisy pracy w salonie",
-      "description": "Rolka z zapleczem pracy przy zabiegach i stylizacji paznokci."
+      "description": "Rolka z zapleczem pracy przy zabiegach i stylizacji paznokci.",
+      "embed": "https://player.vimeo.com/video/1237650717?badge=0&autopause=1"
     },
     "montaz-08": {
       "poster": "assets/content/posters/montaz-08.jpg",
       "posterTime": 2.85,
       "title": "Pilates · energia treningu",
-      "description": "Dynamiczny montaż z treningu pilatesu na reformerze."
+      "description": "Dynamiczny montaż z treningu pilatesu na reformerze.",
+      "embed": "https://player.vimeo.com/video/1237650744?badge=0&autopause=1"
     }
   }
 }
