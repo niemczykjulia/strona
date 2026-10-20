@@ -32,15 +32,6 @@ document.querySelectorAll('.project-art').forEach(art=>{
  art.addEventListener('pointerleave',()=>{art.style.setProperty('--pointer-x','0px');art.style.setProperty('--pointer-y','0px')});
 });
 
-const motionToggle=document.querySelector('.motion-toggle');
-motionToggle.addEventListener('click',()=>{
- const paused=motionToggle.getAttribute('aria-pressed')!=='true';
- motionToggle.setAttribute('aria-pressed',String(paused));
- motionToggle.textContent=paused?'Wznów animacje':'Wstrzymaj animacje';
- document.body.dataset.motion=paused?'paused':'playing';
- movePortrait();
-});
-
 // Supply media paths in assets/media.json; empty entries keep the designed placeholders.
 async function loadPortfolioMedia(){
  try{
