@@ -1,0 +1,6 @@
+qa/
+*.tar.gz
+.DS_Store
+/tmp/
+# Video masters remain local until compressed or moved to media storage.
+/dist/assets/content/portfolio/**/*.mp4

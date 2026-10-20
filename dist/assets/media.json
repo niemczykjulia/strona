@@ -1,0 +1,116 @@
+{
+  "julia-portret": {
+    "src": "assets/content/julia-portret.jpg",
+    "alt": "Julia — portret",
+    "type": "image",
+    "position": "50% 50%"
+  },
+  "julia-backstage": {
+    "src": "",
+    "alt": "Julia przy pracy",
+    "type": "image",
+    "position": "50% 50%"
+  },
+  "polka-material": {
+    "src": "",
+    "alt": "Polka Pilates — otwarcie i content",
+    "type": "image",
+    "position": "50% 50%"
+  },
+  "forme-material": {
+    "src": "",
+    "alt": "ForMe Pilates — materiał z projektu",
+    "type": "image",
+    "position": "50% 50%"
+  },
+  "reforme-material": {
+    "src": "assets/content/portfolio/pilates/reforme-metamorfoza.jpg",
+    "alt": "Reforme · letnia metamorfoza",
+    "type": "image",
+    "position": "50% 50%",
+    "fit": "contain",
+    "ratio": "1 / 1"
+  },
+  "pila-material": {
+    "src": "",
+    "alt": "Pila Pila — social media",
+    "type": "image",
+    "position": "50% 50%"
+  },
+  "camp-wydarzenie": {
+    "src": "assets/content/portfolio/eventy/allincamp-grupa.jpg",
+    "alt": "ALLinCamp · społeczność na żywo",
+    "type": "image",
+    "position": "50% 50%",
+    "fit": "contain",
+    "ratio": "1.91 / 1"
+  },
+  "camp-julia": {
+    "src": "",
+    "alt": "Julia na ALLinCamp",
+    "type": "image",
+    "position": "50% 50%"
+  },
+  "camp-wywiad": {
+    "src": "",
+    "alt": "Wywiady i relacje",
+    "type": "video",
+    "position": "50% 50%"
+  },
+  "allinconf": {
+    "src": "",
+    "alt": "ALLinConf — kulisy konferencji",
+    "type": "image",
+    "position": "50% 50%"
+  },
+  "tenis-wyjazd": {
+    "src": "assets/content/portfolio/sport/tenis-camp.jpg",
+    "alt": "Tenis camp · zapisy",
+    "type": "image",
+    "position": "50% 50%",
+    "fit": "contain",
+    "ratio": "4 / 5"
+  },
+  "partnerstwa": {
+    "src": "",
+    "alt": "Współprace i sponsoring",
+    "type": "image",
+    "position": "50% 50%"
+  },
+  "reel-backstage": {
+    "src": "",
+    "alt": "Nagrania — backstage",
+    "type": "video",
+    "position": "50% 50%"
+  },
+  "reel-montaz": {
+    "src": "",
+    "alt": "Reels — wybrana realizacja",
+    "type": "video",
+    "position": "50% 50%"
+  },
+  "kreacja-optyk": {
+    "src": "",
+    "alt": "Kreacje — optyk",
+    "type": "image",
+    "position": "50% 50%"
+  },
+  "kreacja-ecommerce": {
+    "src": "",
+    "alt": "Kreacje — e-commerce",
+    "type": "image",
+    "position": "50% 50%"
+  },
+  "kreacja-taniec": {
+    "src": "",
+    "alt": "Kreacje — studio tańca",
+    "type": "image",
+    "position": "50% 50%"
+  },
+  "kreacja-beauty": {
+    "src": "",
+    "alt": "Kreacje — beauty",
+    "type": "image",
+    "position": "50% 50%"
+  }
+}
