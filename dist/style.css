@@ -216,3 +216,15 @@ body[data-motion="paused"] .project:hover .project-logo{transform:none!important
  .experience .experience-row:last-child{padding-bottom:0}
  .experience .experience-row h3{font-size:25px}
 }
+
+/* Vector icons keep one monochrome appearance across iOS and desktop. */
+.icon{display:inline-block;width:1em;height:1em;vertical-align:-.12em;flex-shrink:0;pointer-events:none}
+.tiny-star,.asterisk,.camp-flower{display:inline-flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0}
+.asterisk{width:1em}
+.contact-decoration>.icon{display:block}
+.portfolio-play-circle{padding-left:0}
+.portfolio-play-circle .icon{width:22px;height:22px;transform:translateX(1px)}
+.portfolio-vimeo-link{gap:6px}
+.portfolio-enlarge .icon,.portfolio-count-collapsed .icon,.portfolio-count-expanded .icon{margin-left:4px}
+.ticker-track .icon{width:.65em;height:.65em;margin:0 12px;vertical-align:-.04em;stroke-width:1.2}
+.button span,.nav-contact span{display:inline-flex;align-items:center}

@@ -53,13 +53,13 @@ visual=<<~HTML
     <summary class="portfolio-play" aria-label="Odtwórz: #{title}">
       #{image}
       <span class="portfolio-duration">#{duration}</span>
-      <span class="portfolio-play-circle" aria-hidden="true">▶</span>
+      <span class="portfolio-play-circle" aria-hidden="true"><svg class="icon icon-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 5.5 18.5 12 8 18.5Z"/></svg></span>
       <span class="portfolio-play-caption">Odtwórz film</span>
     </summary>
     <iframe class="portfolio-embed" src="#{esc.call(player_url)}" title="#{title}" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
   </details>
 </div>
-<a class="portfolio-vimeo-link" href="#{esc.call(player_url)}" target="_blank" rel="noopener noreferrer">Otwórz film w Vimeo ↗</a>
+<a class="portfolio-vimeo-link" href="#{esc.call(player_url)}" target="_blank" rel="noopener noreferrer">Otwórz film w Vimeo <svg class="icon icon-arrow-ne" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
 HTML
 else
 visual=<<~HTML
@@ -68,16 +68,16 @@ visual=<<~HTML
     #{image}
     <span class="portfolio-duration">#{duration}</span>
     <span class="portfolio-cover-title">#{title.sub(' · ', '<br/>')}</span>
-    <span class="portfolio-play-circle" aria-hidden="true">▶</span>
+    <span class="portfolio-play-circle" aria-hidden="true"><svg class="icon icon-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 5.5 18.5 12 8 18.5Z"/></svg></span>
     <span class="portfolio-play-caption">Obejrzyj rolkę</span>
   </button>
   <video controls playsinline preload="none"#{poster ? %( poster="#{esc.call(poster)}") : ''} aria-label="#{title}" hidden></video>
-  <p class="portfolio-video-error" hidden>Nie udało się odtworzyć filmu. <a href="#{src}">Otwórz plik wideo ↗</a></p>
+  <p class="portfolio-video-error" hidden>Nie udało się odtworzyć filmu. <a href="#{src}">Otwórz plik wideo <svg class="icon icon-arrow-ne" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></a></p>
 </div>
 HTML
 end
   else
-    visual=%(<a class="portfolio-visual portfolio-image" href="#{src}" data-gallery-image aria-label="Powiększ: #{title}"><img src="#{src}" alt="#{title}" loading="lazy" decoding="async"/><span class="portfolio-enlarge" aria-hidden="true">Powiększ ↗</span></a>)
+    visual=%(<a class="portfolio-visual portfolio-image" href="#{src}" data-gallery-image aria-label="Powiększ: #{title}"><img src="#{src}" alt="#{title}" loading="lazy" decoding="async"/><span class="portfolio-enlarge" aria-hidden="true">Powiększ <svg class="icon icon-arrow-ne" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a>)
   end
   %(<article class="portfolio-item" data-category="#{category}" data-asset-id="#{esc.call(item['id'])}"><div class="portfolio-item-top"><span>#{esc.call(labels[item['category']])}</span><span>#{badge}</span></div>#{visual}<h3>#{title}</h3><p>#{description}</p></article>)
 end.join("\n")
@@ -89,7 +89,7 @@ gallery = <<~HTML
 <div class="portfolio-filters" role="group" aria-label="Wybierz temat realizacji">#{filters}</div>
 <p class="portfolio-results" role="status" aria-live="polite">#{results}</p>
 <div class="portfolio-grid" id="portfolio-grid">#{cards}</div>
-<label class="portfolio-more" for="portfolio-expanded"><span class="portfolio-count-collapsed">Zobacz więcej (#{items.size - 3}) ↓</span><span class="portfolio-count-expanded">Pokaż mniej ↑</span></label>
+<label class="portfolio-more" for="portfolio-expanded"><span class="portfolio-count-collapsed">Zobacz więcej (#{items.size - 3}) <svg class="icon icon-arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v16M5 13l7 7 7-7"/></svg></span><span class="portfolio-count-expanded">Pokaż mniej <svg class="icon icon-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20V4M5 11l7-7 7 7"/></svg></span></label>
 <p class="portfolio-watch-note">Wybierz temat i zajrzyj do środka. Grafiki możesz powiększyć, a filmy odtworzyć z dźwiękiem.</p>
 
 <dialog class="portfolio-lightbox" aria-label="Podgląd realizacji"><button type="button" class="portfolio-lightbox-close" aria-label="Zamknij podgląd">Zamknij ×</button><img alt=""/><p></p></dialog>
